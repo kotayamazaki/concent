@@ -1,0 +1,34 @@
+.Header
+  .Header__field
+    .Header__box
+      Concent
+    .Header__Icon
+      .Header__Icon--edit
+        投稿する
+        = link_to '#' do
+          = icon('fas', 'edit')
+      .Header__Icon--user
+        user
+        = link_to '#' do
+          = icon('fas', 'cog')
+
+.Wrapper
+
+  .SideBar
+    .ContentsList
+      .Content
+        = link_to '#' do
+          .Content__title
+            記事名
+          .Content__data
+            記事の更新日時
+
+  .MainContents
+    .ContentsBox
+      .ContetTitle
+        タイトル
+      .ContentInfo
+        .ContentInfo__userName
+          ユーザー名
+        .ContentInfo__data
+          2020/2/2 12:22
