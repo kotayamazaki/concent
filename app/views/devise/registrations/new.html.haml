@@ -2,6 +2,7 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field
+      %h2.field-name 新規登録
       .content-box
         %p.line 氏名
         .content-box__list
@@ -64,3 +65,4 @@
         .actions
           = f.submit "登録する", class: "submit-btn"
           = render "devise/shared/links"
+          %p.done-font ※登録済みの方はこちらからどうぞ。
