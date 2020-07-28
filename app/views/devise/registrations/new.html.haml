@@ -1,21 +1,66 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.Main-content
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      .content-box
+        %p.line 氏名
+        .content-box__list
+          = f.label :姓（カナ）
+          .content-box__name 必須
+        = f.text_field :family_kana, autocomplete: "family_kana", class: "form-field"
+        .content-box__list
+          = f.label :姓
+          .content-box__name 必須
+        = f.text_field :family_name, autocomplete: "family_name", class: "form-field"
+        .content-box__list
+          = f.label :名（カナ）
+          .content-box__name 必須
+        = f.text_field :first_kana, autocomplete: "first_kana", class: "form-field"
+        .content-box__list
+          = f.label :名
+          .content-box__name 必須
+        = f.text_field :first_name, autocomplete: "first_name", class: "form-field"
+
+      %hr
+      .content-box
+        .content-box__list
+          = f.label :メールアドレス
+          .content-box__name 必須
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-field"
+      
+      %hr
+      .content-box
+        %p.line
+        .content-box__list
+          = f.label :パスワード
+          - if @minimum_password_length
+            .content-box__name 必須
+        = f.password_field :password, autocomplete: "new-password", class: "form-field", placeholder:'8文字以上'
+        .content-box__list
+          = f.label :パスワード（再入力）
+          .content-box__name 必須
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-field", placeholder:'8文字以上'
+        %br
+        %p.warning ※第三者によるログインを防ぐために、できるだけ複雑なものを設定してください。
+      
+      %hr
+      .content-box
+        %p.line
+        .content-box__list
+          = f.label :ニックネーム
+          .content-box__name 必須
+        = f.text_field :nickname, autocomplete: "nickname", class: "form-field"
+      
+      %hr
+      .content-box
+        %p.line
+        .content-box__list
+          = f.label :誕生日
+          .content-box__name 必須
+        = f.text_field :birthday, autocomplete: "birthday", class: "form-field", placeholder:'（例）1990/02/02'
+
+      %hr
+      .content-box
+        .actions
+          = f.submit "登録する", class: "submit-btn"
+          = render "devise/shared/links"
