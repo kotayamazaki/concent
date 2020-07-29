@@ -1,6 +1,5 @@
 = render "layouts/header"
 .Wrapper
-
   .SideBar
     .ContentsList
       .Content
@@ -20,9 +19,3 @@
         .ContentInfo__data
           2020/2/2 12:22
 
-.header__contents__below__registration__new
-  = link_to "新規登録", new_user_registration_path, class: 'post'
-  / 新規登録画面に移行する
-.header__contents__below__registration__login
-  = link_to "ログイン", new_user_session_path, class: 'post'
-  / ログイン画面に移行する

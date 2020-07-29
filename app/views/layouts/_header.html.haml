@@ -1,13 +1,39 @@
 .Header
   .Header__field
-    .Header__box
-      Concent
-    .Header__Icon
+    .Header__root
+      =link_to root_path do
+        %p.title Medic
+        = image_tag "ハート2.png", size: "50x50", alt: "アイコン", class: 'concent-logo'
+
+    -# 検索部分
+  .Header__search
+    = form_with(url: "#", local: true, method: :get, class: "search-form") do |f|
+      = f.text_field :keyword, placeholder: "     キーワードを入力", class: "search-input"
+      %i.fas.fa-search
+  
+
+    -#  ユーザーがログインしているか調べる
+  - if user_signed_in?
+    .Header-user
+      .Header-user__box
+        %p #{current_user.nickname}さん
+      .Header-user__user-out
+        = link_to "ログアウト", root_path, method: :delete, class: 'post'
+    -#  ユーザーがログインしていなかった時の処理
+  - else
+    .Header-not-user
+      .Header-not-user__signup
+        = link_to "新規登録", new_user_registration_path, class: 'post', method: :get
+      .Header-not-user__login
+        = link_to "ログイン", new_user_session_path, class: 'post', method: :get
+
+
+  .Header__Icon
+    = link_to '#',class: "Info" do
       .Header__Icon--edit
         投稿する
-        = link_to '#' do
-          = icon('fas', 'edit')
+        = icon('fas', 'edit')
+    = link_to '#',class: "Info" do
       .Header__Icon--user
-        user
-        = link_to '#' do
-          = icon('fas', 'cog')
+        マイページ
+        = icon('fas', 'cog')
