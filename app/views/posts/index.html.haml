@@ -1,19 +1,5 @@
-.Header
-  .Header__field
-    .Header__box
-      Concent
-    .Header__Icon
-      .Header__Icon--edit
-        投稿する
-        = link_to '#' do
-          = icon('fas', 'edit')
-      .Header__Icon--user
-        user
-        = link_to '#' do
-          = icon('fas', 'cog')
-
+= render "layouts/header"
 .Wrapper
-
   .SideBar
     .ContentsList
       .Content
@@ -32,3 +18,4 @@
           ユーザー名
         .ContentInfo__data
           2020/2/2 12:22
+

@@ -1,4 +1,7 @@
-@import "reset";
+@import "modules/reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "posts";
+@import "devise/registrations";
+@import "devise/session";
+@import "posts/index";
+@import "layouts/header";

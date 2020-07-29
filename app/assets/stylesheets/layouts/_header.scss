@@ -1,0 +1,110 @@
+.Header {
+  height: 60px;
+  width: 100vw;
+  padding: 10px 0;
+  background-color: #40e0d0;
+  display: flex;
+
+  // タイトル部分
+  &__field {
+    width: 18%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__root {
+    display: flex;
+    position: relative;
+    .title {
+      font-size: 37px;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-decoration: none;
+      position: absolute;
+      left: 80px;
+      bottom: 10px;
+    }
+    .concent-logo {
+      margin: 10px 0 0 195px;
+    }
+  }
+
+  // 検索フォーム
+  &__search {
+    width: 700px;
+    display: flex;
+    align-items: center;
+    .search-form {
+      position: relative;
+    }
+    .fas.fa-search {
+      font-size: 15px;
+      color: #a9a9a9;
+      position: absolute;
+      left: 7px;
+      bottom: 7px;
+    }
+    .search-input {
+      width: 300px;
+      height: 30px;
+      border: none;
+      border-radius: 3px;
+    }
+  }
+
+  // ユーザー管理
+  // ログインしている場合のCSS
+  .Header-user {
+    display: flex;
+    margin-top: 40px;
+  }
+  // ログインしていない場合のCSS
+  .Header-not-user {
+    display: flex;
+    margin-top: 40px;
+  }
+  .post {
+    text-decoration: none;
+    width: 60px;
+    height: 40px;
+    color: #fff;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+
+  // アイコン部分
+  &__Icon {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  &__Icon--edit {
+    height: 20px;
+    width: 70px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    background: #008080;
+    border-radius: 3px;
+    padding: 15px;
+    margin-top: 13px;
+    text-align: center;
+  }
+  &__Icon--user {
+    height: 20px;
+    width: 70px;
+    color: #333;
+    font-size: 11px;
+    font-weight: bold;
+    background: #7fffd4;
+    margin: 13px 15px;
+    border-radius: 3px;
+    padding: 15px;
+    text-align: center;
+  }
+  .Info {
+    text-decoration: none;
+  }
+}
