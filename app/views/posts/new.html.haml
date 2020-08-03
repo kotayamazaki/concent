@@ -1,0 +1,13 @@
+= render "layouts/header"
+.Main-contents
+  = form_with(model: @post, local: true) do |f|
+    = f.text_field :title, autocomplete: "title", class: "title-field", placeholder:'  タイトル'
+    -# = f.text_field :tag, autocomplete: "tag", class: "tag-field", placeholder:'  医療に関するタグを入力'
+    .sub-area
+      .sub-area__text 本文
+      = f.label :image, class: 'image' do
+        = icon('far', 'image', class: 'icon')
+        = f.file_field :image, class: 'Hidden'
+    = f.text_area :text, autocomplete: "text", class: "text-area", placeholder:'  医療に関する知識をみんなで共有しよう'
+    .actions
+      = f.submit "投稿する", class: "submit-btn"
