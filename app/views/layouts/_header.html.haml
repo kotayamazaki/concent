@@ -29,9 +29,9 @@
 
 
   .Header__Icon
-    = link_to '#',class: "Info" do
+    = link_to new_post_path, class: "Info" do
       .Header__Icon--edit
-        投稿する
+        投稿画面
         = icon('fas', 'edit')
     = link_to '#',class: "Info" do
       .Header__Icon--user
