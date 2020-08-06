@@ -18,7 +18,7 @@
   }
 
 
-  .MainContents {
+  .MainArticles {
     height: 300vh;
     width: calc(100vw - 300px);
     padding: 15px;
@@ -28,10 +28,9 @@
     overflow: scroll;
     margin-right: 200px;
   }
-  .ContentsBox {
+  .Article-body {
     margin-bottom: 35px;
-  }
-  .ContetTitle {
-
+    &__Title {
+    }
   }
 }

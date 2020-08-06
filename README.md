@@ -56,7 +56,7 @@ Things you may want to cover:
 ## tagsテーブル
 | Column       | Type   | Options                  |
 | ------------ | ------ | ------------------------ |
-| text         | text   | null: false              |
+| name         | string | null: false              |
 ### Association
 - has_many :posts_tags
 - has_many  :posts,  through:  :posts_tags

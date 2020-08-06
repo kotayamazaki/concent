@@ -1,8 +1,14 @@
 = render "layouts/header"
 .Main-contents
   = form_with(model: @post, local: true) do |f|
+    -# = f.label "タイトル"
     = f.text_field :title, autocomplete: "title", class: "title-field", placeholder:'  タイトル'
     -# = f.text_field :tag, autocomplete: "tag", class: "tag-field", placeholder:'  医療に関するタグを入力'
+    
+    .article-tags-field
+      = f.label "カテゴリー"
+      %ul#article-tags
+
     .sub-area
       .sub-area__text 本文
       = f.label :image, class: 'image' do

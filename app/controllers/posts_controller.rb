@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, except: [:index, :new, :create]
 
   def index
-    # @post = Post.includes(:tag)
+    @post = Post.all.order('created_at DESC')
   end
   
   def new
