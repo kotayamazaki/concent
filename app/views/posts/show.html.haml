@@ -1,0 +1,35 @@
+= render "layouts/header"
+.main-contents
+  .article-box
+    .article-box__user
+      = @post.user.nickname
+    .article-box__title
+      = @post.title
+    .article-box__text
+      = @post.text
+
+  .comments
+  %h4.comment-table コメント一覧
+  - if @comments
+    - @comments.each do |comment|
+      .comments-box
+        .comments-box__user
+          = link_to comment.user.nickname, "/users/#{comment.user_id}", class: "user-link"
+        .comments-box__text
+          = comment.text
+  - else 
+    %p この記事にコメントはありません。
+
+  .container
+  - if current_user
+    %h4.comment-title 投稿する
+    = form_with(model: [@post, @comment], local: true) do |f|
+      .container-box
+        .container-box__text
+          = f.text_area :text, placeholder: "テキストを入力", rows: "2", class: "comment-text"
+        .container-box__send-btn
+          = f.submit "投稿", class: "send-btn"
+  - else
+    %strong
+      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+  

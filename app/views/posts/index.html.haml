@@ -19,5 +19,4 @@
             .Article-body__Info--userName
               = post.user.nickname
             .Article-body__Info--data
-              = post.created_at
-
+              = post.created_at.to_s(:datetime_jp)

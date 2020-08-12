@@ -21,7 +21,6 @@
   .MainArticles {
     height: 300vh;
     width: calc(100vw - 300px);
-    padding: 15px;
     margin: 10px;
     background-color: #fafafa;
     box-sizing: border-box;
@@ -29,8 +28,30 @@
     margin-right: 200px;
   }
   .Article-body {
-    margin-bottom: 35px;
+    margin-bottom: 13px;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 15px 15px;
+    margin: 0 10px;
     &__Title {
+      color: #000000;
+      font-size: 18px;
+      font-weight: bold;
     }
+    &__Info {
+      display: flex;
+      margin-top: 10px;
+      &--userName {
+       color: gray;
+       margin-right: 12px;
+       font-size: 14px;
+      }
+      &--data {
+      color: gray;
+       font-size: 14px;
+      }
+    }
+  }
+  .url-stile {
+    text-decoration: none;
   }
 }

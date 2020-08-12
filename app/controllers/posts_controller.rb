@@ -32,6 +32,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @post.comment.includes(:user)
   end
 
 private
