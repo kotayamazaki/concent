@@ -3,7 +3,7 @@
   width: 100vw;
   box-sizing:border-box;
   .SideBar {
-    height: 130vh;
+    height: 80vh;
     width: 300px;
     padding: 15px;
     margin: 10px;
@@ -17,9 +17,8 @@
     }
   }
 
-
   .MainArticles {
-    height: 300vh;
+    height: 150vh;
     width: calc(100vw - 300px);
     margin: 10px;
     background-color: #fafafa;
