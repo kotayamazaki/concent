@@ -2,7 +2,10 @@ class PostsController < ApplicationController
   before_action :set_post, except: [:index, :new, :create]
 
   def index
-    @post = Post.all.order('created_at DESC')
+    @post = Post.includes(:user,:tags).all.order('created_at DESC')
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}")
+    end
   end
   
   def new
@@ -13,7 +16,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      flash[:notice] = "投稿が確認できました"
+      flash[:notice] = "投稿が保存できました"
       redirect_to root_path
     else    
       @post = Post.new
@@ -42,6 +45,6 @@ private
   end
 
   def post_params
-    params.require(:post).permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :tag_list).merge(user_id: current_user.id)
   end
 end
