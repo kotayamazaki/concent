@@ -1,30 +1,32 @@
 .Wrapper {
   display: flex;
+  justify-content: center;
   width: 100vw;
   box-sizing:border-box;
-  .SideBar {
-    height: 80vh;
-    width: 300px;
-    padding: 15px;
-    margin: 10px;
-    background-color: gainsboro;
-    box-sizing: border-box;
-    overflow: scroll;
-    display: flex;
-    margin-left: 200px;
-    .ContentsList {
+  // .SideBar {
+  //   height: 80vh;
+  //   width: 300px;
+  //   padding: 15px;
+  //   margin: 10px;
+  //   background-color: gainsboro;
+  //   box-sizing: border-box;
+  //   overflow: scroll;
+  //   display: flex;
+  //   margin-left: 200px;
+  //   .ContentsList {
 
-    }
-  }
+  //   }
+  // }
+
 
   .MainArticles {
     height: 150vh;
-    width: calc(100vw - 300px);
+    width: 70vw;
     margin: 10px;
     background-color: #fafafa;
     box-sizing: border-box;
     overflow: scroll;
-    margin-right: 200px;
+    margin: 0 auto;
   }
   .Article-body {
     margin-bottom: 13px;

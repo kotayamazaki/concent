@@ -7,7 +7,7 @@
 
   // タイトル部分
   &__field {
-    width: 18%;
+    width: 21%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,7 @@
 
   // 検索フォーム
   &__search {
-    width: 700px;
+    width: 40%;
     display: flex;
     align-items: center;
     .search-form {
@@ -59,6 +59,13 @@
   .Header-user {
     display: flex;
     margin-top: 40px;
+    &__username {
+      width: 60px;
+      height: 40px;
+      color: #fff;
+      margin-right: 20px;
+      font-weight: bold;
+    }
   }
   // ログインしていない場合のCSS
   .Header-not-user {
@@ -77,7 +84,7 @@
   // アイコン部分
   &__Icon {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     text-align: center;
   }
   &__Icon--edit {
