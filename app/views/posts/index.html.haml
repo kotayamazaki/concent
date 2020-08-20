@@ -1,13 +1,13 @@
 = render "layouts/header"
 .Wrapper
-  .SideBar
-    .ContentsList
-      .Content
-        = link_to '#' do
-          .Content__title
-            記事名
-          .Content__data
-            記事の更新日時
+  -# .SideBar
+  -#   .ContentsList
+  -#     .Content
+  -#       = link_to '#' do
+  -#         .Content__title
+  -#           記事名
+  -#         .Content__data
+  -#           記事の更新日時
 
   .MainArticles
     - @post.each do |post|
@@ -20,3 +20,6 @@
               = post.user.nickname
             .Article-body__Info--data
               = post.created_at.to_s(:datetime_jp)
+          .tag-table
+            %ul.posts__left__group__post-tag
+              = render 'posts/tag_list', tag_list: post.tag_list

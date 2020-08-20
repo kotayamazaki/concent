@@ -16,7 +16,7 @@
   - if user_signed_in?
     .Header-user
       .Header-user__box
-        %p #{current_user.nickname}さん
+        %span.Header-user__username #{current_user.nickname} さん
       .Header-user__user-out
         = link_to "ログアウト", root_path, method: :delete, class: 'post'
     -#  ユーザーがログインしていなかった時の処理
@@ -33,7 +33,7 @@
       .Header__Icon--edit
         投稿画面
         = icon('fas', 'edit')
-    = link_to '#',class: "Info" do
+    = link_to users_path, class: "Info" do
       .Header__Icon--user
         マイページ
         = icon('fas', 'cog')
